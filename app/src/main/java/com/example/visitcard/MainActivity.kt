@@ -47,7 +47,8 @@ fun BusinessCard(modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f),
-            contentAlignment = Alignment.Center) {
+            contentAlignment = Alignment.Center
+        ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.padding(24.dp)
@@ -85,56 +86,65 @@ fun BusinessCard(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
                 .padding(bottom = 32.dp)
         ) {
-        // Телефон с иконкой
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(vertical = 6.dp)
-        ) {
-            Text(
-                text = "📞 ",
-                fontSize = 20.sp
-            )
-            Text(
-                text = stringResource(R.string.phone),
-                fontSize = 16.sp,
-                color = Color.Blue
-            )
-        }
 
-        // Соц сеть с иконкой
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(vertical = 6.dp)
-        ) {
-            Text(
-                text = "🌐 ",
-                fontSize = 20.sp
-            )
-            Text(
-                text = stringResource(R.string.social),
-                fontSize = 16.sp,
-                color = Color.Blue
-            )
-        }
+            Column(
+                modifier = Modifier.width(180.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                // Телефон с иконкой
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(vertical = 6.dp)
+                ) {
+                    Text(
+                        text = "📞 ",
+                        fontSize = 20.sp
 
-        // Email с иконкой
-        Row (
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(vertical = 6.dp)
-        ) {
-            Text(
-                text = "✉️ ",
-                fontSize = 20.sp
-            )
-            Text(
-                text = stringResource(R.string.email),
-                fontSize = 16.sp,
-                color = Color.Blue
-            )
+                    )
+                    Text(
+                        text = stringResource(R.string.phone),
+                        fontSize = 16.sp,
+                        color = Color.Blue
+                    )
+                }
+
+                // Соц сеть с иконкой
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(vertical = 6.dp)
+                ) {
+                    Text(
+                        text = "🌐 ",
+                        fontSize = 20.sp
+
+                    )
+                    Text(
+                        text = stringResource(R.string.social),
+                        fontSize = 16.sp,
+                        color = Color.Blue
+                    )
+                }
+
+                // Email с иконкой
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(vertical = 6.dp)
+                ) {
+                    Text(
+                        text = "✉️ ",
+                        fontSize = 20.sp
+                    )
+                    Text(
+                        text = stringResource(R.string.email),
+                        fontSize = 16.sp,
+                        color = Color.Blue
+                    )
+                }
+            }
         }
     }
 }
-    }
+
 
 
 @Preview(showBackground = true)
