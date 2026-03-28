@@ -58,7 +58,6 @@ fun BusinessCard(modifier: Modifier = Modifier) {
                     contentDescription = stringResource(R.string.photo_description),
                     modifier = Modifier.size(120.dp)
                 )
-
                 Text(
                     text = stringResource(R.string.full_name),
                     fontSize = 24.sp,
