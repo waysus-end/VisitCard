@@ -53,7 +53,6 @@ fun BusinessCard(modifier: Modifier = Modifier) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.padding(24.dp)
             ) {
-
                 Image(
                     painter = painterResource(R.drawable.profile),
                     contentDescription = stringResource(R.string.photo_description),
