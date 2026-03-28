@@ -54,14 +54,12 @@ fun BusinessCard(modifier: Modifier = Modifier) {
                 modifier = Modifier.padding(24.dp)
             ) {
 
-                // Фото
                 Image(
                     painter = painterResource(R.drawable.profile),
                     contentDescription = stringResource(R.string.photo_description),
                     modifier = Modifier.size(120.dp)
                 )
 
-                // ФИО
                 Text(
                     text = stringResource(R.string.full_name),
                     fontSize = 24.sp,
@@ -70,7 +68,6 @@ fun BusinessCard(modifier: Modifier = Modifier) {
                     modifier = Modifier.padding(top = 16.dp, bottom = 8.dp)
                 )
 
-                // Описание деятельности
                 Text(
                     text = stringResource(R.string.title),
                     fontSize = 18.sp,
@@ -80,67 +77,55 @@ fun BusinessCard(modifier: Modifier = Modifier) {
                 )
             }
         }
+
+        ContactSection()
+    }
+}
+
+@Composable
+fun ContactRow(icon: String, contactText: String) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.padding(vertical = 6.dp)
+    ) {
+        Text(
+            text = icon,
+            fontSize = 20.sp
+        )
+        Text(
+            text = contactText,
+            fontSize = 16.sp,
+            color = Color.Blue
+        )
+    }
+}
+@Composable
+fun ContactSection() {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 32.dp)
+    ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 32.dp)
+            modifier = Modifier.width(180.dp),
+            horizontalAlignment = Alignment.Start
+
         ) {
+            ContactRow(
+                icon = "📞 ",
+                contactText = stringResource(R.string.phone)
+            )
 
-            Column(
-                modifier = Modifier.width(180.dp),
-                horizontalAlignment = Alignment.Start
-            ) {
-                // Телефон с иконкой
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(vertical = 6.dp)
-                ) {
-                    Text(
-                        text = "📞 ",
-                        fontSize = 20.sp
+            ContactRow(
+                icon = "🌐 ",
+                contactText = stringResource(R.string.social)
+            )
 
-                    )
-                    Text(
-                        text = stringResource(R.string.phone),
-                        fontSize = 16.sp,
-                        color = Color.Blue
-                    )
-                }
-
-                // Соц сеть с иконкой
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(vertical = 6.dp)
-                ) {
-                    Text(
-                        text = "🌐 ",
-                        fontSize = 20.sp
-
-                    )
-                    Text(
-                        text = stringResource(R.string.social),
-                        fontSize = 16.sp,
-                        color = Color.Blue
-                    )
-                }
-
-                // Email с иконкой
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(vertical = 6.dp)
-                ) {
-                    Text(
-                        text = "✉️ ",
-                        fontSize = 20.sp
-                    )
-                    Text(
-                        text = stringResource(R.string.email),
-                        fontSize = 16.sp,
-                        color = Color.Blue
-                    )
-                }
-            }
+            ContactRow(
+                icon = "✉️ ",
+                contactText = stringResource(R.string.email)
+            )
         }
     }
 }
